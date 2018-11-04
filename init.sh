@@ -1,4 +1,4 @@
 sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
-sudo gunicorn -c /home/box/web/etc/gunicorn-django.conf ask.wsgi:application
+sudo -s ln -sf /home/box/web/etc/django-gunicorn.conf  /etc/gunicorn.d/django-gunicorn.conf
 sudo gunicorn -w 4 -b 0.0.0.0:8080 hello:app &
